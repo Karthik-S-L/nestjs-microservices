@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, HttpException, HttpStatus } from '@nestjs/common';
 import { EventPattern, MessagePattern } from '@nestjs/microservices';
 import { AppService } from './app.service';
 import { CreateUserEvent } from './create-user.event';
@@ -8,9 +8,14 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getHello(): string {
-    console.log('here1');
-    return this.appService.getHello();
+  async getHello() {
+    const result = this.appService.getHello();
+
+    return {
+      statusCode: HttpStatus.OK,
+      message: '',
+      result,
+    };
   }
 
   @EventPattern('user_created')

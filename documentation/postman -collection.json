@@ -1,0 +1,100 @@
+{
+    "info": {
+      "name": "NestJS Microservices",
+      "description": "Collection for testing Backend, Analytics, and Communication services",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Backend",
+        "item": [
+          {
+            "name": "Get Hello",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://localhost:3000",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3000"
+              }
+            }
+          },
+          {
+            "name": "Create User",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"johndoe@example.com\"\n}"
+              },
+              "url": {
+                "raw": "http://localhost:3000",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3000"
+              }
+            }
+          },
+          {
+            "name": "Get Analytics",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://localhost:3000/analytics",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["analytics"]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Analytics Microservice",
+        "item": [
+          {
+            "name": "Get Hello",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://localhost:3001",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3001"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Communication Microservice",
+        "item": [
+          {
+            "name": "Get Hello",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://localhost:3002",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3002"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+  

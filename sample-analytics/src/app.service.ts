@@ -9,7 +9,7 @@ export class AppService {
 
   getHello(): string {
     logger.log(`${getLoggerPrefix()} `);
-    return 'Hello World!';
+    return 'Hello World from analytics microservice!';
   }
 
   handleUserCreated(data: CreateUserEvent) {

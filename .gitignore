@@ -1,0 +1,40 @@
+# Node.js
+node_modules/
+dist/
+.env
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor files
+.idea/
+.vscode/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage/
+.nyc_output/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Build artifacts
+build/
+out/
+
+# Logs
+logs/
+*.log
+
+# Ignore package-lock.json or yarn.lock if you're not using lock files
+# Uncomment the next line if you don't want lock files
+# package-lock.json
+# yarn.lock
