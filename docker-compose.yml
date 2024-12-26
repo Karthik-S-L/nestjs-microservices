@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: ./sample-backend
+      dockerfile: Dockerfile  # This refers to the Dockerfile in the backend folder
+    ports:
+      - "3000:3000"
+    networks:
+      - nestjs-network
+
+  communications:
+    build:
+      context: ./sample-communication
+      dockerfile: Dockerfile  # This refers to the Dockerfile in the communications folder
+    ports:
+      - "3002:3002"
+    networks:
+      - nestjs-network
+
+  analytics:
+    build:
+      context: ./sample-analytics
+      dockerfile: Dockerfile  # This refers to the Dockerfile in the analytics folder
+    ports:
+      - "3001:3001"
+    networks:
+      - nestjs-network
+
+networks:
+  nestjs-network:
+    driver: bridge

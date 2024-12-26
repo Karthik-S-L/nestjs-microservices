@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  HttpException,
+  HttpStatus,
+  Post,
+  Res,
+} from '@nestjs/common';
 import { AppService } from './app.service';
 import { CreateUserRequest } from './create-user-request.dto';
 
@@ -7,8 +15,24 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  async getHello() {
+    const result = this.appService.getHello();
+    if (!result) {
+      throw new HttpException(
+        {
+          statusCode: HttpStatus.NOT_FOUND,
+          message: 'Result not found',
+          result: null,
+        },
+        HttpStatus.NOT_FOUND,
+      );
+    }
+
+    return {
+      statusCode: HttpStatus.OK,
+      message: '',
+      result,
+    };
   }
 
   @Post()

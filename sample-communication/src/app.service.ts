@@ -7,7 +7,7 @@ import { getLoggerPrefix } from './utils/logger-debug.util';
 export class AppService {
   getHello(): string {
     logger.log(`${getLoggerPrefix()} `);
-    return 'Hello World!';
+    return 'Hello World from communication microservice.!';
   }
 
   handleUserCreated(data: CreateUserEvent) {

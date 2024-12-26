@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "@nestjs/microservices": "^10.4.15"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  },
+  
+    "scripts": {
+      "start:backend": "node sample-backend/dist/main.js", 
+      "start:communications": "node  sample-communication/dist/main.js",  
+      "start:analytics": "node  sample-analytics/dist/main.js", 
+      "start:all": "concurrently \"npm run start:backend\" \"npm run start:communications\" \"npm run start:analytics\""
+    }
+  
+  
+}

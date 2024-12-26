@@ -1,0 +1,22 @@
+# Ignore node_modules folder
+node_modules
+
+# Ignore build or dist folders (unless you are building inside the container)
+dist
+
+# Ignore log files
+*.log
+
+# Ignore .git folder
+.git
+
+# Ignore .env files (you may want to provide a specific env file for production)
+.env
+
+# Ignore any temporary files and IDE configuration files
+.vscode
+.idea
+.DS_Store
+
+# Ignore npm-debug log
+npm-debug.log

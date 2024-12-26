@@ -15,6 +15,6 @@ async function bootstrap() {
     },
   );
   await app.listen();
-  logger.log(`Communication application started`);
+  logger.log(`Communication application started on port 3002`);
 }
 bootstrap();
